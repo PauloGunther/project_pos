@@ -12,7 +12,7 @@ import pandas as pd
 
 # Criando função para realizar Grid Search com SARIMAX - Melhor RMSE
 
-def sarimax_gridsearch_rmse(y_train, y_test, exog_train=None, exog_test=None,
+def sarimax_gridsearch_rmse(y, y_train, y_test, exog_train=None, exog_test=None,
                            p_values=range(1, 3), d_values=range(0, 2), q_values=range(1, 3),
                            P_values=range(1, 5), D_values=range(1, 5), Q_values=range(1, 5),
                            seasonal_period=12):
@@ -20,6 +20,7 @@ def sarimax_gridsearch_rmse(y_train, y_test, exog_train=None, exog_test=None,
     Realiza grid search para SARIMAX selecionando pelo menor RMSE
 
     Parâmetros:
+    - y: dataframe variavel dependente
     - y_train: preços de treino
     - y_test: preços para o cálculo do RMSE
     - exog_train: variáveis exógenas de treino
@@ -103,7 +104,7 @@ def sarimax_gridsearch_rmse(y_train, y_test, exog_train=None, exog_test=None,
 
 # Criando função para realizar Grid Search com SARIMAX - Melhor AIC
 
-def sarimax_gridsearch_AIC(y_train, y_test, exog_train=None, exog_test=None,
+def sarimax_gridsearch_AIC(y, y_train, y_test, exog_train=None, exog_test=None,
                            p_values=range(1, 3), d_values=range(0, 2), q_values=range(1, 3),
                            P_values=range(1, 5), D_values=range(1, 5), Q_values=range(1, 5),
                            seasonal_period=12):
@@ -111,6 +112,7 @@ def sarimax_gridsearch_AIC(y_train, y_test, exog_train=None, exog_test=None,
     Realiza grid search para SARIMAX selecionando pelo menor AIC
 
     Parâmetros:
+    - y: dataframe variavel dependente
     - y_train: preços de treino
     - y_test: preços para o cálculo do AIC
     - exog_train: variáveis exógenas de treino
