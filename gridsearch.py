@@ -1,3 +1,8 @@
+# Outras
+import itertools
+import warnings
+warnings.filterwarnings('ignore')
+
 # Criando função para realizar Grid Search com SARIMAX - Melhor RMSE
 
 def sarimax_gridsearch_rmse(y_train, y_test, exog_train=None, exog_test=None,
