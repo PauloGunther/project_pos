@@ -1,3 +1,15 @@
+# Pacotes
+
+import itertools
+import warnings
+warnings.filterwarnings('ignore')
+from statsmodels.tsa.statespace.sarimax import SARIMAX # Modelo
+import numpy as np
+from math import sqrt
+from sklearn.metrics import mean_squared_error # Métricas (RMSE)
+import pandas as pd
+
+
 # Criando função para realizar Grid Search com SARIMAX - Melhor RMSE
 
 def sarimax_gridsearch_rmse(y_train, y_test, exog_train=None, exog_test=None,
@@ -19,11 +31,6 @@ def sarimax_gridsearch_rmse(y_train, y_test, exog_train=None, exog_test=None,
     Retorna:
     - DataFrame com resultados ordenados por RMSE
     """
-    # Pacotes
-    import itertools
-    import warnings
-    warnings.filterwarnings('ignore')
-
     # Combinação dos parâmetros não sazonais
     order_combinations = list(itertools.product(p_values,
                                                 d_values,
@@ -115,10 +122,6 @@ def sarimax_gridsearch_AIC(y_train, y_test, exog_train=None, exog_test=None,
     Retorna:
     - DataFrame com resultados ordenados por AIC
     """
-    # Pacotes
-    import itertools
-    import warnings
-    warnings.filterwarnings('ignore')
                              
     # Combinação dos parâmetros não sazonais
     order_combinations = list(itertools.product(p_values,
@@ -186,6 +189,7 @@ def sarimax_gridsearch_AIC(y_train, y_test, exog_train=None, exog_test=None,
 
     print("\nTop 5 melhores modelos por AIC:")
     print(results_df.head(5).to_string(index=False))
+
 
     return results_df
                             
