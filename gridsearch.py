@@ -1,8 +1,3 @@
-# Outras
-import itertools
-import warnings
-warnings.filterwarnings('ignore')
-
 # Criando função para realizar Grid Search com SARIMAX - Melhor RMSE
 
 def sarimax_gridsearch_rmse(y_train, y_test, exog_train=None, exog_test=None,
@@ -24,6 +19,10 @@ def sarimax_gridsearch_rmse(y_train, y_test, exog_train=None, exog_test=None,
     Retorna:
     - DataFrame com resultados ordenados por RMSE
     """
+    # Pacotes
+    import itertools
+    import warnings
+    warnings.filterwarnings('ignore')
 
     # Combinação dos parâmetros não sazonais
     order_combinations = list(itertools.product(p_values,
@@ -116,7 +115,11 @@ def sarimax_gridsearch_AIC(y_train, y_test, exog_train=None, exog_test=None,
     Retorna:
     - DataFrame com resultados ordenados por AIC
     """
-
+    # Pacotes
+    import itertools
+    import warnings
+    warnings.filterwarnings('ignore')
+                             
     # Combinação dos parâmetros não sazonais
     order_combinations = list(itertools.product(p_values,
                                                 d_values,
