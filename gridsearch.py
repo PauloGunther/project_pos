@@ -165,8 +165,15 @@ def sarimax_gridsearch_AIC(y, y_train, y_test, exog_train=None, exog_test=None,
                 predictions = forecast.predicted_mean
 
                 # Retornando os valores para os originais
-                predictions = y.iloc[-len(predictions)-1:-1].values + predictions.cumsum()
+                y_reconst1 = predictions.cumsum() # diff1
+                y_reconst2 = y_reconst1.cumsum() # diff2
+                
+                # Retorando valores reais
                 y_test = y.iloc[-len(predictions):]
+               
+                # Terminando o retorno da diferenciação
+                y_reconst2 = y_reconst2 + (y_test[1] - y_test[0])
+                predictions = y_reconst2 + y_test[0]
 
                 # Calcular RMSE
                 rmse = sqrt(mean_squared_error(y_test, predictions))
