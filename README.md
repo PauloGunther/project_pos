@@ -3,11 +3,16 @@
 Aqui se encontram os dados e os notebooks usados para realização do trabalho de Conclusão de Curso 
 de MBA em Data Science Analytics, na USP ESALQ.
 
-O primeiro notebook é o tcc_etl.ipynb - Onde está a compilação dos dados e ajustes das variaveis
-O segundo é o tcc_modelos.ipynb - Onde estão os tres modelos trabalhados
-Gridsearch.py é o arquivo com funções que usei para encontrar os melhores modelos
-Fipezap.xlsx são os preços dos imóveis
-df_pre_model.pkl é a saída dos dados pré processados do primeiro notebook.
+Sobre os arquivos:
+1) tcc_etl.ipynb - Onde está a compilação dos dados e ajustes das variaveis
+
+2) tcc_modelos.ipynb - Onde estão os tres modelos trabalhados
+
+3) Gridsearch.py é o arquivo com funções que usei para encontrar os melhores modelos
+
+4) Fipezap.xlsx são os preços dos imóveis
+
+5) df_pre_model.pkl é a saída dos dados pré processados do primeiro notebook.
 
 
 O mercado imobiliário de Goiânia apresentou expressiva valorização nos últimos anos, destacando-se nacionalmente 
